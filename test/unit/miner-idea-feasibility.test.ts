@@ -8,8 +8,9 @@ import {
   assessIdeaFeasibility,
   deriveIdeaIssueStatus,
 } from "../../packages/loopover-miner/lib/idea-feasibility.js";
+import type { ResolvedIdeaSignals } from "../../packages/loopover-miner/lib/idea-feasibility.js";
 
-function cleanSignals(overrides: Record<string, unknown> = {}) {
+function cleanSignals(overrides: Partial<ResolvedIdeaSignals> = {}): ResolvedIdeaSignals {
   return { targetResolvable: true, claimStatus: "unclaimed", duplicateClusterRisk: "none", ...overrides };
 }
 
